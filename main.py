@@ -5,13 +5,12 @@ import robloxpy
 import ctypes
 from colorama import init, Fore, Style
 
-# Initialize colorama
 init()
 
 def generate_random_cookie(min_length=740, max_length=850):
     length = random.randint(min_length, max_length)
     characters = string.ascii_uppercase + string.digits
-    random_string = ''.join(random.choice(characters) for _ in range(length - 82))  # Adjusted for the warning string length
+    random_string = ''.join(random.choice(characters) for _ in range(length - 82))
     cookie = f"|_WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_{random_string}"
     return cookie
 
@@ -58,10 +57,8 @@ def main():
                 fail_count += 1
                 set_cmd_title(success_count, fail_count)
 
-            # Reset the text color
             print(Style.RESET_ALL)
 
-        # Set cmd title back to default
         set_cmd_title(success_count, fail_count)
 
 if __name__ == "__main__":
